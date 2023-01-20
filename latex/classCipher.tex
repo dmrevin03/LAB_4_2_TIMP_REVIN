@@ -1,0 +1,189 @@
+\hypertarget{classCipher}{}\doxysection{Cipher Class Reference}
+\label{classCipher}\index{Cipher@{Cipher}}
+
+
+Класс для шифрования и расшифрования методом табличной маршрутной перестановки  
+
+
+
+
+{\ttfamily \#include $<$Cipher.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classCipher_ae728d0917db639dd49638a268298391f}\label{classCipher_ae728d0917db639dd49638a268298391f}} 
+\mbox{\hyperlink{classCipher_ae728d0917db639dd49638a268298391f}{Cipher}} ()=delete
+\begin{DoxyCompactList}\small\item\em Запрещающий конструктор без параметров \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCipher_a18781eba7ae36d2314577fa362e12ace}{Cipher}} (int w)
+\begin{DoxyCompactList}\small\item\em Конструктор для ключа \end{DoxyCompactList}\item 
+wstring \mbox{\hyperlink{classCipher_a98ba5ca438475d8e7192adc67169e1f0}{Coder\+Cipher}} (\mbox{\hyperlink{classCipher}{Cipher}} w, wstring \&s)
+\begin{DoxyCompactList}\small\item\em Метод , предназначенный для шифрования методом табличной маршрутной перестановки \end{DoxyCompactList}\item 
+wstring \mbox{\hyperlink{classCipher_a5fcf5789b5cf1eed166ceb39a33cf1fa}{Decoder\+Cipher}} (\mbox{\hyperlink{classCipher}{Cipher}} w, wstring \&s)
+\begin{DoxyCompactList}\small\item\em Метод , предназначенный для шифрования методом табличной маршрутной перестановки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс для шифрования и расшифрования методом табличной маршрутной перестановки 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classCipher_a18781eba7ae36d2314577fa362e12ace}\label{classCipher_a18781eba7ae36d2314577fa362e12ace}} 
+\index{Cipher@{Cipher}!Cipher@{Cipher}}
+\index{Cipher@{Cipher}!Cipher@{Cipher}}
+\doxysubsubsection{\texorpdfstring{Cipher()}{Cipher()}}
+{\footnotesize\ttfamily Cipher\+::\+Cipher (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})}
+
+
+
+Конструктор для ключа 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Ключ} & -\/ это целочисленное значение\\
+\hline
+\end{DoxyParams}
+Число, которое поступило на вход, записывается в \char`\"{}private\char`\"{} атрибут с названием \char`\"{}key\char`\"{} 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classCipher_a98ba5ca438475d8e7192adc67169e1f0}\label{classCipher_a98ba5ca438475d8e7192adc67169e1f0}} 
+\index{Cipher@{Cipher}!CoderCipher@{CoderCipher}}
+\index{CoderCipher@{CoderCipher}!Cipher@{Cipher}}
+\doxysubsubsection{\texorpdfstring{CoderCipher()}{CoderCipher()}}
+{\footnotesize\ttfamily wstring Cipher\+::\+Coder\+Cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCipher}{Cipher}}}]{w,  }\item[{wstring \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Метод , предназначенный для шифрования методом табличной маршрутной перестановки 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Экземляр} & класса \char`\"{}\+Cipher\char`\"{}, в котором установился ключ \\
+\hline
+{\em wstring} & -\/ строка, которую нужно зашифровать\\
+\hline
+\end{DoxyParams}
+
+
+Сначала вычисляется размер таблицы по формуле. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} h;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (s.size()\%w.k!=0) \{}
+\DoxyCodeLine{  h=s.size()/w.k+1;}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{  h=s.size()/w.k;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Затем создаётся двумерный массив типа \char`\"{}wchar\+\_\+t\char`\"{}, который имеет необходимый размер\+: размер таблицы в строках вычисляется по формуле, а количество столбцов -\/ это ключ, который устанавливается в экземляре класса \char`\"{}\+Cipher\char`\"{}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{wchar\_t} a[h][w.k];}
+
+\end{DoxyCode}
+ 
+
+Далее в созданный массив записываются символы строки, которую нужно зашифровать. Запись символов просходит по следующему маршруту\+: слева-\/направа, сверху-\/вниз. То есть, запись происходит построчно. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<h; i++) \{}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<w.k; j++) \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{if} (k<s.size()) \{}
+\DoxyCodeLine{          a[i][j]=s[k];}
+\DoxyCodeLine{         k++;}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} a[i][j]=\textcolor{charliteral}{' '};}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Внимание!\+: Если в таблице остаются незаполненные \char`\"{}ячейки\char`\"{}, то в них записывается символ \char`\"{}пробела\char`\"{}. Такая ситуации может произойти, если длина строки, которую нужно зашивровать, не кратна значению ключа. 
+
+После записи поступившей на вход строки в таблицу, происходит процесс её шифрования. Он заключается в том, что символы, которые находятся в двумерном массиве записываются в строку типа wstring с именем \char`\"{}code\char`\"{} по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, чтение происходит по столбцам. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<w.k; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<h; j++) \{}
+\DoxyCodeLine{       code+=a[j][i];}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{return} code;  }
+
+\end{DoxyCode}
+ 
+
+\begin{DoxyReturn}{Returns}
+зашифрованная строка типа \char`\"{}wstring\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classCipher_a5fcf5789b5cf1eed166ceb39a33cf1fa}\label{classCipher_a5fcf5789b5cf1eed166ceb39a33cf1fa}} 
+\index{Cipher@{Cipher}!DecoderCipher@{DecoderCipher}}
+\index{DecoderCipher@{DecoderCipher}!Cipher@{Cipher}}
+\doxysubsubsection{\texorpdfstring{DecoderCipher()}{DecoderCipher()}}
+{\footnotesize\ttfamily wstring Cipher\+::\+Decoder\+Cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCipher}{Cipher}}}]{w,  }\item[{wstring \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Метод , предназначенный для шифрования методом табличной маршрутной перестановки 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Экземляр} & класса \char`\"{}\+Cipher\char`\"{}, в котором установился ключ \\
+\hline
+{\em wstring} & -\/ строка, которую нужно расшифровать\\
+\hline
+\end{DoxyParams}
+
+
+Сначала вычисляется размер таблицы по формуле. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} h;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (s.size()\%w.k!=0) \{}
+\DoxyCodeLine{  h=s.size()/w.k+1;}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{  h=s.size()/w.k;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Затем создаётся двумерный массив типа \char`\"{}wchar\+\_\+t\char`\"{}, который имеет необходимый размер\+: размер таблицы в строках вычисляется по формуле, а количество столбцов -\/ это ключ, который устанавливается в экземляре класса \char`\"{}\+Cipher\char`\"{}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{wchar\_t} a[h][w.k];}
+
+\end{DoxyCode}
+ 
+
+Далее в созданный массив записываются символы строки, которую нужно расшифровать. Запись символов просходит по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, запись происходит по столбцам. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<w.k; i++) \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<h; j++) \{}
+\DoxyCodeLine{         a[j][i]=s[k];}
+\DoxyCodeLine{        k++;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Внимание!\+: Если в таблице остаются незаполненные \char`\"{}ячейки\char`\"{}, то в них записывается символ \char`\"{}пробела\char`\"{}. Такая ситуация может произойти, если длина строки, которую необходимо расшифровать, не кратна значению ключа. 
+\begin{DoxyParams}{Parameters}
+{\em wstring} & -\/ строка, которую нужно расшифровать \\
+\hline
+\end{DoxyParams}
+
+
+В конечном итоге происходит процесс расшифрования. Он заключается в том, что символы, которые находятся в двумерном массиве записываются в строку типа wstring с именем \char`\"{}decode\char`\"{} по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, чтение происходит построчно. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<h; i++) \{}
+\DoxyCodeLine{   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<w.k; j++) \{}
+\DoxyCodeLine{      decode+=a[i][j];}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{return} decode;}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxyReturn}{Returns}
+расшифрованная строка типа \char`\"{}wstring\char`\"{} 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Cipher_8h}{Cipher.\+h}}\end{DoxyCompactItemize}
