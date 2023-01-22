@@ -3,7 +3,7 @@
 * @author Ревин Д.К.
 * @version 1.0
 * @brief Описание класса Cipher
-* @date 20.01.2023
+* @date 22.01.2023
 * @copyright ИБСТ ПГУ
 */
 #pragma once
