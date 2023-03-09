@@ -1,0 +1,205 @@
+\hypertarget{classPerestanCipher}{}\doxysection{Класс Perestan\+Cipher}
+\label{classPerestanCipher}\index{PerestanCipher@{PerestanCipher}}
+
+
+Класс для шифрования и расшифрования методом табличной маршрутной перестановки  
+
+
+
+
+{\ttfamily \#include $<$Perestan\+Cipher.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}\label{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}} 
+\mbox{\hyperlink{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}{Cipher}} ()=delete
+\begin{DoxyCompactList}\small\item\em Запрещающий конструктор без параметров \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPerestanCipher_afca94a0725786c4194ea4e36d51f3b88}{Cipher}} (int w)
+\begin{DoxyCompactList}\small\item\em Конструктор для ключа \end{DoxyCompactList}\item 
+wstring \mbox{\hyperlink{classPerestanCipher_a05f695076c6a1b3f96b4d1cd5553da37}{Coder\+Cipher}} (\mbox{\hyperlink{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}{Cipher}} w, wstring \&s)
+\begin{DoxyCompactList}\small\item\em Метод , предназначенный для шифрования методом табличной маршрутной перестановки \end{DoxyCompactList}\item 
+wstring \mbox{\hyperlink{classPerestanCipher_aaa6ef87899b60340beeda1f06a54ce7e}{Decoder\+Cipher}} (\mbox{\hyperlink{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}{Cipher}} w, wstring \&s)
+\begin{DoxyCompactList}\small\item\em Метод , предназначенный для шифрования методом табличной маршрутной перестановки \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPerestanCipher_a40a59d5a5a8f56d0e5663778ce18376e}\label{classPerestanCipher_a40a59d5a5a8f56d0e5663778ce18376e}} 
+wstring {\bfseries get\+Valid\+Open\+Text} (const std\+::wstring \&s)
+\item 
+\mbox{\Hypertarget{classPerestanCipher_a6addc56e73c0332a407934effc14a405}\label{classPerestanCipher_a6addc56e73c0332a407934effc14a405}} 
+wstring {\bfseries get\+Valid\+Cipher\+Text} (const std\+::wstring \&s)
+\item 
+\mbox{\Hypertarget{classPerestanCipher_a9f6b9e922919fc122826b25805c3393f}\label{classPerestanCipher_a9f6b9e922919fc122826b25805c3393f}} 
+int {\bfseries get\+Valid\+Key} (const int \mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}, const std\+::wstring \&s)
+\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}\label{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}} 
+int \mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}
+\begin{DoxyCompactList}\small\item\em атрибут, хранящий ключ для шифрования и расшифрования \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для шифрования и расшифрования методом табличной маршрутной перестановки 
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classPerestanCipher_afca94a0725786c4194ea4e36d51f3b88}\label{classPerestanCipher_afca94a0725786c4194ea4e36d51f3b88}} 
+\index{PerestanCipher@{PerestanCipher}!Cipher@{Cipher}}
+\index{Cipher@{Cipher}!PerestanCipher@{PerestanCipher}}
+\doxysubsubsection{\texorpdfstring{Cipher()}{Cipher()}}
+{\footnotesize\ttfamily Perestan\+Cipher\+::\+Cipher (\begin{DoxyParamCaption}\item[{int}]{w }\end{DoxyParamCaption})}
+
+
+
+Конструктор для ключа 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em Ключ} & -\/ это целочисленное значение\\
+\hline
+\end{DoxyParams}
+Число, которое поступило на вход, записывается в \char`\"{}private\char`\"{} атрибут с названием \char`\"{}key\char`\"{} \mbox{\Hypertarget{classPerestanCipher_a05f695076c6a1b3f96b4d1cd5553da37}\label{classPerestanCipher_a05f695076c6a1b3f96b4d1cd5553da37}} 
+\index{PerestanCipher@{PerestanCipher}!CoderCipher@{CoderCipher}}
+\index{CoderCipher@{CoderCipher}!PerestanCipher@{PerestanCipher}}
+\doxysubsubsection{\texorpdfstring{CoderCipher()}{CoderCipher()}}
+{\footnotesize\ttfamily wstring Perestan\+Cipher\+::\+Coder\+Cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}{Cipher}}}]{w,  }\item[{wstring \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Метод , предназначенный для шифрования методом табличной маршрутной перестановки 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em Экземляр} & класса \char`\"{}\+Cipher\char`\"{}, в котором установился ключ \\
+\hline
+{\em wstring} & -\/ строка, которую нужно зашифровать\\
+\hline
+\end{DoxyParams}
+
+
+Сначала вычисляется размер таблицы по формуле. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} h;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (s.size()\%w.k!=0) \{}
+\DoxyCodeLine{  h=s.size()/w.k+1;}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{  h=s.size()/w.k;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Затем создаётся двумерный массив типа \char`\"{}wchar\+\_\+t\char`\"{}, который имеет необходимый размер\+: размер таблицы в строках вычисляется по формуле, а количество столбцов -\/ это ключ, который устанавливается в экземляре класса \char`\"{}\+Cipher\char`\"{}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{wchar\_t} a[h][w.k];}
+
+\end{DoxyCode}
+ 
+
+Далее в созданный массив записываются символы строки, которую нужно зашифровать. Запись символов просходит по следующему маршруту\+: слева-\/направа, сверху-\/вниз. То есть, запись происходит построчно. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<h; i++) \{}
+\DoxyCodeLine{  \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<w.k; j++) \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{if} (\mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}<s.size()) \{}
+\DoxyCodeLine{          a[i][j]=s[\mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}];}
+\DoxyCodeLine{         \mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}++;}
+\DoxyCodeLine{    \} \textcolor{keywordflow}{else} a[i][j]=\textcolor{charliteral}{' '};}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Внимание!\+: Если в таблице остаются незаполненные \char`\"{}ячейки\char`\"{}, то в них записывается символ \char`\"{}пробела\char`\"{}. Такая ситуации может произойти, если длина строки, которую нужно зашивровать, не кратна значению ключа. 
+
+После записи поступившей на вход строки в таблицу, происходит процесс её шифрования. Он заключается в том, что символы, которые находятся в двумерном массиве записываются в строку типа wstring с именем \char`\"{}code\char`\"{} по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, чтение происходит по столбцам. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<w.k; i++) \{}
+\DoxyCodeLine{    \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<h; j++) \{}
+\DoxyCodeLine{       code+=a[j][i];}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{return} code;  }
+
+\end{DoxyCode}
+ 
+
+\begin{DoxyReturn}{Возвращает}
+зашифрованная строка типа \char`\"{}wstring\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classPerestanCipher_aaa6ef87899b60340beeda1f06a54ce7e}\label{classPerestanCipher_aaa6ef87899b60340beeda1f06a54ce7e}} 
+\index{PerestanCipher@{PerestanCipher}!DecoderCipher@{DecoderCipher}}
+\index{DecoderCipher@{DecoderCipher}!PerestanCipher@{PerestanCipher}}
+\doxysubsubsection{\texorpdfstring{DecoderCipher()}{DecoderCipher()}}
+{\footnotesize\ttfamily wstring Perestan\+Cipher\+::\+Decoder\+Cipher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPerestanCipher_a550c43eed64349bb99ef591116af00bd}{Cipher}}}]{w,  }\item[{wstring \&}]{s }\end{DoxyParamCaption})}
+
+
+
+Метод , предназначенный для шифрования методом табличной маршрутной перестановки 
+
+
+\begin{DoxyParams}{Аргументы}
+{\em Экземляр} & класса \char`\"{}\+Cipher\char`\"{}, в котором установился ключ \\
+\hline
+{\em wstring} & -\/ строка, которую нужно расшифровать\\
+\hline
+\end{DoxyParams}
+
+
+Сначала вычисляется размер таблицы по формуле. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{int} h;}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (s.size()\%w.k!=0) \{}
+\DoxyCodeLine{  h=s.size()/w.k+1;}
+\DoxyCodeLine{\} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{  h=s.size()/w.k;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Затем создаётся двумерный массив типа \char`\"{}wchar\+\_\+t\char`\"{}, который имеет необходимый размер\+: размер таблицы в строках вычисляется по формуле, а количество столбцов -\/ это ключ, который устанавливается в экземляре класса \char`\"{}\+Cipher\char`\"{}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{wchar\_t} a[h][w.k];}
+
+\end{DoxyCode}
+ 
+
+Далее в созданный массив записываются символы строки, которую нужно расшифровать. Запись символов просходит по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, запись происходит по столбцам. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<w.k; i++) \{}
+\DoxyCodeLine{      \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<h; j++) \{}
+\DoxyCodeLine{         a[j][i]=s[\mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}];}
+\DoxyCodeLine{        \mbox{\hyperlink{classPerestanCipher_ab4e4785b243c65158abff80e99c32083}{k}}++;}
+\DoxyCodeLine{   \}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ Внимание!\+: Если в таблице остаются незаполненные \char`\"{}ячейки\char`\"{}, то в них записывается символ \char`\"{}пробела\char`\"{}. Такая ситуация может произойти, если длина строки, которую необходимо расшифровать, не кратна значению ключа. 
+\begin{DoxyParams}{Аргументы}
+{\em wstring} & -\/ строка, которую нужно расшифровать \\
+\hline
+\end{DoxyParams}
+
+
+В конечном итоге происходит процесс расшифрования. Он заключается в том, что символы, которые находятся в двумерном массиве записываются в строку типа wstring с именем \char`\"{}decode\char`\"{} по следующему маршруту\+: сверху-\/вниз, слева-\/направа. То есть, чтение происходит построчно. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<h; i++) \{}
+\DoxyCodeLine{   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j=0; j<w.k; j++) \{}
+\DoxyCodeLine{      decode+=a[i][j];}
+\DoxyCodeLine{ \}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{\textcolor{keywordflow}{return} decode;}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxyReturn}{Возвращает}
+расшифрованная строка типа \char`\"{}wstring\char`\"{} 
+\end{DoxyReturn}
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{PerestanCipher_8h}{Perestan\+Cipher.\+h}}\item 
+Perestan\+Cipher.\+cpp\end{DoxyCompactItemize}
