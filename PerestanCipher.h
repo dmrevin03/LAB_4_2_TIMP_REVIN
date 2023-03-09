@@ -1,5 +1,5 @@
 /**
-* @file Cipher.h
+* @file PerestanCipher.h
 * @author Ревин Д.К.
 * @version 1.0
 * @brief Описание класса Cipher
