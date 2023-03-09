@@ -13,7 +13,7 @@
 
 using namespace std;
 /// @brief Класс для шифрования и расшифрования методом табличной маршрутной перестановки
-class Cipher
+class PerestanCipher
 {
 private:
 /// @brief атрибут, хранящий ключ для шифрования и расшифрования
